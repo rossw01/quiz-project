@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
-    <script src="app.js" type="module"></script>
+    <script src="app.js" defer></script>
     <script src="questions.js"></script>
   </head>
   <body>
@@ -24,12 +24,20 @@
           <p id="score" class="score">0</p>
         </div>
         <div class="row">
-          <button class="answer" id="answer1" onclick="answer1()">1</button>
-          <button class="answer" id="answer2" onclick="answer2()">2</button>
+          <button class="answer" id="answer1" onclick="checkCorrect(4)">
+            1
+          </button>
+          <button class="answer" id="answer2" onclick="checkCorrect(3)">
+            2
+          </button>
         </div>
         <div class="row">
-          <button class="answer" id="answer3" onclick="answer3()">3</button>
-          <button class="answer" id="answer4" onclick="answer4()">4</button>
+          <button class="answer" id="answer3" onclick="checkCorrect(3)">
+            3
+          </button>
+          <button class="answer" id="answer4" onclick="checkCorrect(4)">
+            4
+          </button>
         </div>
         <p class="answer-result" id="answerResult">Correct</p>
         <button class="start-button" id="startButton" onclick="startQuiz()">
