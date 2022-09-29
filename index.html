@@ -12,14 +12,27 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <script src="app.js" defer></script>
     <script src="questions.js"></script>
   </head>
   <body>
+    <div class="pos-f-t">
+      <div class="bg-dark p-4">
+        <h5 class="text-white d-flex justify-content-center">
+          How organised are you?
+        </h5>
+      </div>
+    </div>
     <div class="wrapper">
       <div class="container">
         <p class="question" id="question">Quiz</p>
-        <p class="result" id="result">You have aids</p>
+        <p class="result" id="result"></p>
         <div class="row">
           <button class="answer" id="answer1" onclick="userChose(1)">1</button>
           <button class="answer" id="answer2" onclick="userChose(2)">2</button>
