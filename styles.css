@@ -31,7 +31,7 @@
 }
 
 .question {
-  margin-bottom: 3rem;
+  margin: 0rem 2rem 3rem 2rem;
   font-size: 48px;
 }
 
@@ -124,8 +124,8 @@ button:hover {
   }
 
   .answer {
-    min-width: 30vw;
-    max-width: 40vw;
+    min-width: 33vw;
+    max-width: 33vw;
     min-height: 20vh;
     max-height: 30vh;
     font-size: 14px;
