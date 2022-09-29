@@ -1,5 +1,4 @@
 const questionElement = document.getElementById("question");
-const scoreElement = document.getElementById("score");
 const questionResultElement = document.getElementById("answerResult");
 const numberOfQuestions = Object.keys(questions).length;
 
@@ -18,6 +17,7 @@ function nextQuestion() {
   // If no more questions left, display "End of quiz!"
   if (questionNumber > numberOfQuestions) {
     questionElement.innerText = "End of quiz!";
+    displayResult();
   } else {
     // Only update the questions/answer boxes if the quiz isn't finished
     questionElement.innerText = questions[`question${questionNumber}`].question;
@@ -53,7 +53,6 @@ function checkCorrect(userChoice) {
     // Make sure not to check questions obj once we have gone through all questions
     if (userChoice == questions[`question${questionNumber}`].answer) {
       score++;
-      scoreElement.innerText = score;
       new Audio("/sounds/correct.mp3").play();
       displayFeedback("Correct");
       nextQuestion();
@@ -69,7 +68,6 @@ function checkCorrect(userChoice) {
 function startQuiz() {
   questionNumber = 0; // Reset current question index
   score = 0;
-  scoreElement.innerText = 0;
 
   nextQuestion();
 }
