@@ -1,3 +1,4 @@
+const startResetElement = document.getElementById("startButton");
 const questionElement = document.getElementById("question");
 const questionResultElement = document.getElementById("answerResult");
 const numberOfQuestions = Object.keys(questions).length;
@@ -13,12 +14,14 @@ var score = 0; // Tracks current score
 
 function displayIntro() {
   questionElement.style.display = "none";
+  startResetElement.innerText = "Start";
 }
 
 function hideIntro() {
   buttonsHidden = true;
   questionElement.style.display = "block";
   introElement.style.display = "none";
+  startResetElement.innerText = "Reset";
 }
 
 function generateResult() {
