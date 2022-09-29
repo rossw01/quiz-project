@@ -6,7 +6,7 @@ const resultElement = document.getElementById("result");
 const introElement = document.getElementById("intro");
 
 var displayedIntro = false;
-var buttonsHidden = true;
+var buttonsHidden = false;
 
 var questionNumber = 0; // Tracks what is the current question
 var score = 0; // Tracks current score
@@ -16,6 +16,7 @@ function displayIntro() {
 }
 
 function hideIntro() {
+  buttonsHidden = true;
   questionElement.style.display = "block";
   introElement.style.display = "none";
 }
@@ -97,14 +98,12 @@ function userChose(userChoice) {
 }
 
 function startQuiz() {
-  buttonsHidden = false;
   toggleButtons();
   if (!displayedIntro) {
     // if first time running...
     displayIntro();
     displayedIntro = true;
   } else if (displayedIntro) {
-    buttonsHidden = true;
     hideIntro();
     toggleButtons();
 
