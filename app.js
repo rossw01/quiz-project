@@ -40,9 +40,10 @@ function checkCorrect(userChoice) {
     if (userChoice == questions[`question${questionNumber}`].answer) {
       score++;
       scoreElement.innerText = score;
+      new Audio("/sounds/correct.mp3").play();
       nextQuestion();
-      // TODO: Play Sound
     } else {
+      new Audio("sounds/incorrect.mp3").play();
       nextQuestion();
       // TODO: Play Sound
     }
