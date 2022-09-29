@@ -3,10 +3,22 @@ const questionResultElement = document.getElementById("answerResult");
 const numberOfQuestions = Object.keys(questions).length;
 const answerElementList = document.getElementsByClassName("answer");
 const resultElement = document.getElementById("result");
+const introElement = document.getElementById("intro");
 
-var resultsScreen = false;
+var displayedIntro = false;
+var buttonsHidden = true;
+
 var questionNumber = 0; // Tracks what is the current question
 var score = 0; // Tracks current score
+
+function displayIntro() {
+  questionElement.style.display = "none";
+}
+
+function hideIntro() {
+  questionElement.style.display = "block";
+  introElement.style.display = "none";
+}
 
 function generateResult() {
   if (score < 21) {
@@ -18,21 +30,18 @@ function generateResult() {
   }
 }
 
-function toggleDisplayResult() {
-  if (!resultsScreen) {
+function toggleButtons() {
+  if (!buttonsHidden) {
     // If we're not already on the results screen...
     for (let i = 0; i < answerElementList.length; i++) {
       answerElementList[i].style.display = "none";
     }
-    resultElement.innerText = generateResult();
-    resultElement.style.display = "block";
-    resultsScreen = true;
   } else {
+    resultElement.style.display = "none";
     for (let i = 0; i < answerElementList.length; i++) {
       answerElementList[i].style.display = "block";
     }
-    resultElement.style.display = "none";
-    resultsScreen = false;
+    buttonsHidden = false;
   }
 }
 
@@ -41,7 +50,10 @@ function nextQuestion() {
   // If no more questions left, display "End of quiz!"
   if (questionNumber > numberOfQuestions) {
     questionElement.innerText = "End of quiz!";
-    toggleDisplayResult();
+    toggleButtons();
+    resultElement.innerText = generateResult();
+    resultElement.style.display = "block";
+    buttonsHidden = true;
   } else {
     // Only update the questions/answer boxes if the quiz isn't finished
     questionElement.innerText = questions[`question${questionNumber}`].question;
@@ -85,13 +97,20 @@ function userChose(userChoice) {
 }
 
 function startQuiz() {
-  if (resultsScreen) {
-    toggleDisplayResult();
+  buttonsHidden = false;
+  toggleButtons();
+  if (!displayedIntro) {
+    // if first time running...
+    displayIntro();
+    displayedIntro = true;
+  } else if (displayedIntro) {
+    buttonsHidden = true;
+    hideIntro();
+    toggleButtons();
+
+    questionNumber = 0; // Reset current question index
+    score = 0;
   }
-
-  questionNumber = 0; // Reset current question index
-  score = 0;
-
   nextQuestion();
 }
 
