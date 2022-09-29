@@ -1,17 +1,13 @@
 const questionElement = document.getElementById("question");
-const answer1Element = document.getElementById("answer1");
-const answer2Element = document.getElementById("answer2");
-const answer3Element = document.getElementById("answer3");
-const answer4Element = document.getElementById("answer4");
 const scoreElement = document.getElementById("score");
 const questionResultElement = document.getElementById("answerResult");
 const numberOfQuestions = Object.keys(questions).length;
 
 const answerElementList = [
-  answer1Element,
-  answer2Element,
-  answer3Element,
-  answer4Element,
+  document.getElementById("answer1"),
+  document.getElementById("answer2"),
+  document.getElementById("answer3"),
+  document.getElementById("answer4"),
 ];
 
 var questionNumber = 0; // Tracks what is the current question
