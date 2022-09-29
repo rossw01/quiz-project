@@ -4,6 +4,7 @@ const answer2Element = document.getElementById("answer2");
 const answer3Element = document.getElementById("answer3");
 const answer4Element = document.getElementById("answer4");
 const scoreElement = document.getElementById("score");
+const questionResultElement = document.getElementById("answerResult");
 const numberOfQuestions = Object.keys(questions).length;
 
 const answerElementList = [
@@ -34,6 +35,23 @@ function nextQuestion() {
   }
 }
 
+function displayFeedback(result) {
+  // questionResultElement.innerText = result; // Set innerText to "Correct" or "Incorrect"
+  if (!(questionNumber > numberOfQuestions)) {
+    if (result == "Correct") {
+      questionResultElement.style.color = "Green";
+    } else {
+      questionResultElement.style.color = "Red";
+    }
+    questionResultElement.style.transition = "none";
+    questionResultElement.style.opacity = "1";
+    questionResultElement.textContent = result; // Set innerText to "Correct" or "Incorrect"
+    void questionResultElement.offsetHeight; // Allows us to transition again (for some reason)
+    questionResultElement.style.transition = "opacity 1s";
+    questionResultElement.style.opacity = "0";
+  }
+}
+
 function checkCorrect(userChoice) {
   if (!(questionNumber > numberOfQuestions)) {
     // Make sure not to check questions obj once we have gone through all questions
@@ -41,9 +59,11 @@ function checkCorrect(userChoice) {
       score++;
       scoreElement.innerText = score;
       new Audio("/sounds/correct.mp3").play();
+      displayFeedback("Correct");
       nextQuestion();
     } else {
       new Audio("sounds/incorrect.mp3").play();
+      displayFeedback("Incorrect");
       nextQuestion();
       // TODO: Play Sound
     }
