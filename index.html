@@ -18,22 +18,15 @@
   <body>
     <div class="wrapper">
       <div class="container">
-        <p class="question" id="question">Anagram Quiz</p>
+        <p class="question" id="question">Quiz</p>
+        <p class="result" id="result">You have aids</p>
         <div class="row">
-          <button class="answer" id="answer1" onclick="checkCorrect(1)">
-            1
-          </button>
-          <button class="answer" id="answer2" onclick="checkCorrect(2)">
-            2
-          </button>
+          <button class="answer" id="answer1" onclick="userChose(1)">1</button>
+          <button class="answer" id="answer2" onclick="userChose(2)">2</button>
         </div>
         <div class="row">
-          <button class="answer" id="answer3" onclick="checkCorrect(3)">
-            3
-          </button>
-          <button class="answer" id="answer4" onclick="checkCorrect(4)">
-            4
-          </button>
+          <button class="answer" id="answer3" onclick="userChose(3)">3</button>
+          <button class="answer" id="answer4" onclick="userChose(4)">4</button>
         </div>
         <p class="answer-result" id="answerResult"></p>
         <button class="start-button" id="startButton" onclick="startQuiz()">
