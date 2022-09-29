@@ -1,0 +1,94 @@
+* {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  border-style: dashed;
+  border-radius: 20px;
+  padding: 3rem 5rem 2rem 5rem;
+}
+
+.question {
+  margin-bottom: 3rem;
+  font-size: 48px;
+}
+
+.label {
+  margin-left: auto;
+}
+
+.score {
+  align-self: center;
+  font-size: 26px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  width: 38rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.answer {
+  border-style: solid;
+  min-width: 18rem;
+  min-height: 12rem;
+  max-width: 18rem;
+  max-height: 12rem;
+  padding: 0.8rem;
+  border-width: 2px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  box-shadow: 5px 5px 10px 0px #3d3d3d;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#answer1 {
+  background-color: rgb(29, 104, 233);
+}
+
+#answer2 {
+  background-color: rgb(233, 53, 29);
+}
+
+#answer3 {
+  background-color: rgb(219, 233, 29);
+}
+
+#answer4 {
+  background-color: rgb(29, 233, 70);
+}
+
+.answer-result {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.start-button {
+  font-size: 24px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: rgb(123, 42, 208);
+}
