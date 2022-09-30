@@ -27,11 +27,11 @@ function hideIntro() {
 
 function generateResult() {
   if (score < 21) {
-    return "Worst outcome";
+    return outcomes.worst;
   } else if (score < 31) {
-    return "Good outcome";
+    return outcomes.mid;
   } else if (score < 41) {
-    return "Best outcome!";
+    return outcomes.best;
   }
 }
 
