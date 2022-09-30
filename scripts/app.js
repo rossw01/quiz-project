@@ -66,7 +66,7 @@ function nextQuestion() {
     buttonsHidden = true;
   } else {
     // TODO: Change pic of question
-    imageElement.src = `q${questionNumber}.jpg`;
+    imageElement.src = `./images/q${questionNumber}.jpg`;
     // Only update the questions/answer boxes if the quiz isn't finished
     questionElement.innerText = questions[`question${questionNumber}`].question;
     // Add corresponding answers from questions obj to the answer boxes inner text
@@ -86,7 +86,7 @@ function userChose(userChoice) {
     score +=
       questions[`question${questionNumber}`][`button${userChoice}`].points;
     console.log(`score is now ${score}`);
-    new Audio("correct.mp3").play();
+    new Audio("./sounds/correct.mp3").play();
     nextQuestion();
   }
 }
