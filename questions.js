@@ -5,6 +5,7 @@ const questions = {
     button2: { text: "How much I like the movie", points: 3 },
     button3: { text: "Release date", points: 2 },
     button4: { text: "No particular order", points: 1 },
+    image: "q1.jpg",
   },
   question2: {
     question: "When you wake up in the morning, the first thing you do is:",
@@ -12,6 +13,7 @@ const questions = {
     button2: { text: "Get up and make coffee", points: 3 },
     button3: { text: "Go on your phone", points: 2 },
     button4: { text: "Jump straight into the shower", points: 4 },
+    image: "q2.jpg",
   },
   question3: {
     question:
@@ -23,6 +25,7 @@ const questions = {
     button2: { text: "I write it on my palm", points: 2 },
     button3: { text: "I try to remember it", points: 1 },
     button4: { text: "I write it on a sticky-note in my office", points: 3 },
+    image: "q3.jpg",
   },
   question4: {
     question: "Shopping for the week! What’s your plan?",
@@ -39,6 +42,7 @@ const questions = {
       text: "I have all my shopping scheduled for delivery weekly",
       points: 4,
     },
+    image: "q4.jpg",
   },
   question5: {
     question: "What does your plan for today look like?",
@@ -52,6 +56,7 @@ const questions = {
       text: "I have a goal a couple of goals in mind that I want to get done",
       points: 1,
     },
+    image: "q5.jpg",
   },
   question6: {
     question: "You open up netflix, how do you choose what to watch?",
@@ -65,6 +70,7 @@ const questions = {
       text: "I read reviews online and choose based off them.",
       points: 3,
     },
+    image: "q6.jpg",
   },
   question7: {
     question: "What does your fridge and freezer look like right now?",
@@ -81,6 +87,7 @@ const questions = {
       text: "Plenty of ingredients for whatever I fancy making",
       points: 3,
     },
+    image: "q7.jpg",
   },
   question8: {
     question: "Holiday time! How do you pack for the trip?",
@@ -91,6 +98,7 @@ const questions = {
       points: 1,
     },
     button4: { text: "4 of everything!", points: 3 },
+    image: "q8.jpg",
   },
   question9: {
     question: "How long would it take you to find your Birth Certificate?",
@@ -104,6 +112,7 @@ const questions = {
       text: "Multiple hours, I have a good idea of which rooms it could be in.",
       points: 2,
     },
+    image: "q9.jpg",
   },
   question10: {
     question: "Final Question! How do you feel at the end of a day?",
@@ -115,4 +124,5 @@ const questions = {
     },
     button4: { text: "Like I've gotten something done.", points: 2 },
   },
+  image: "q10.jpg",
 };

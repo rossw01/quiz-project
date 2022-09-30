@@ -54,8 +54,11 @@ function toggleButtons() {
 
 function nextQuestion() {
   questionNumber++;
+  console.log(
+    `Current question number: ${questionNumber}, there are ${numberOfQuestions} questions`
+  );
   // If no more questions left, display "End of quiz!"
-  if (questionNumber > numberOfQuestions) {
+  if (questionNumber > numberOfQuestions - 1) {
     questionElement.innerText = "End of quiz!";
     toggleButtons();
     resultElement.innerText = generateResult();
@@ -63,6 +66,7 @@ function nextQuestion() {
     buttonsHidden = true;
   } else {
     // TODO: Change pic of question
+    imageElement.src = `q${questionNumber}.jpg`;
     // Only update the questions/answer boxes if the quiz isn't finished
     questionElement.innerText = questions[`question${questionNumber}`].question;
     // Add corresponding answers from questions obj to the answer boxes inner text
