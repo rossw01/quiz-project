@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
 .wrapper {
   background: radial-gradient(
     circle,
@@ -19,7 +24,8 @@
   height: 93.3vh;
 }
 
-.container {
+.test-container {
+  max-width: 800px;
   border-style: dashed;
   border-radius: 20px;
   padding: 3rem 5rem 2rem 5rem;
@@ -32,7 +38,12 @@
 
 .question {
   margin: 0rem 2rem 3rem 2rem;
-  font-size: 48px;
+  font-size: 24px;
+}
+
+.question-image {
+  width: 300px;
+  height: 165px;
 }
 
 .label {
@@ -44,7 +55,15 @@
   font-size: 26px;
 }
 
-.row {
+.sidebyside {
+  width: 38rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.dynamic-sidebyside {
   width: 38rem;
   display: flex;
   flex-direction: row;
@@ -93,6 +112,11 @@ button:hover {
   opacity: 0;
 }
 
+.intro {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
 .start-button {
   font-size: 24px;
   padding: 0.5rem;
@@ -109,25 +133,68 @@ button:hover {
   display: none;
 }
 
-@media only screen and (max-width: 800px) {
-  .container {
+@media only screen and (max-width: 850px) {
+  .test-container {
     padding: 5vw;
-    min-width: 90vw;
+    min-width: 1px;
+  }
+
+  .dynamic-sidebyside {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .question-image {
+    height: 100px;
+    width: 150px;
   }
 
   .question {
-    font-size: 28px;
+    font-size: 3.5vw;
+    margin: 0px 10vw 24px 10vw;
   }
 
-  .row {
+  .sidebyside {
     width: 70vw;
   }
 
   .answer {
     min-width: 33vw;
     max-width: 33vw;
-    min-height: 20vh;
+    min-height: 15vh;
     max-height: 30vh;
     font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .question {
+    margin: 0px 9rem 24px 9rem;
+  }
+
+  .display-10 {
+    margin-top: -30px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .answer {
+    max-height: 15vh;
+    min-height: 15vh;
+    font-size: 10px;
+    padding: 0%;
+  }
+
+  .sidebyside {
+    margin-bottom: 10px;
+  }
+
+  .d-block {
+    height: 100px;
+    width: 180px;
+  }
+
+  .intro {
+    font-size: 12px;
   }
 }

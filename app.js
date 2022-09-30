@@ -5,6 +5,7 @@ const numberOfQuestions = Object.keys(questions).length;
 const answerElementList = document.getElementsByClassName("answer");
 const resultElement = document.getElementById("result");
 const introElement = document.getElementById("intro");
+const imageElement = document.getElementById("questionImage");
 
 var displayedIntro = false;
 var buttonsHidden = false;
@@ -40,8 +41,10 @@ function toggleButtons() {
     for (let i = 0; i < answerElementList.length; i++) {
       answerElementList[i].style.display = "none";
     }
+    questionImage.style.display = "none"; // Hides image at end of quiz
   } else {
     resultElement.style.display = "none";
+    questionImage.style.display = "block"; // Displays image on quiz start
     for (let i = 0; i < answerElementList.length; i++) {
       answerElementList[i].style.display = "block";
     }
@@ -59,6 +62,7 @@ function nextQuestion() {
     resultElement.style.display = "block";
     buttonsHidden = true;
   } else {
+    // TODO: Change pic of question
     // Only update the questions/answer boxes if the quiz isn't finished
     questionElement.innerText = questions[`question${questionNumber}`].question;
     // Add corresponding answers from questions obj to the answer boxes inner text
@@ -71,23 +75,6 @@ function nextQuestion() {
   }
 }
 
-// function displayFeedback(result) {
-//   // questionResultElement.innerText = result; // Set innerText to "Correct" or "Incorrect"
-//   if (!(questionNumber > numberOfQuestions)) {
-//     if (result == "Correct") {
-//       questionResultElement.style.color = "Green";
-//     } else {
-//       questionResultElement.style.color = "Red";
-//     }
-//     questionResultElement.style.transition = "none";
-//     questionResultElement.style.opacity = "1";
-//     questionResultElement.textContent = result; // Set innerText to "Correct" or "Incorrect"
-//     void questionResultElement.offsetHeight; // Allows us to transition again (for some reason)
-//     questionResultElement.style.transition = "opacity 1s";
-//     questionResultElement.style.opacity = "0";
-//   }
-// }
-
 // Ran through button click in HTML
 function userChose(userChoice) {
   if (!(questionNumber > numberOfQuestions)) {
@@ -95,7 +82,7 @@ function userChose(userChoice) {
     score +=
       questions[`question${questionNumber}`][`button${userChoice}`].points;
     console.log(`score is now ${score}`);
-    new Audio("/sounds/correct.mp3").play();
+    new Audio("correct.mp3").play();
     nextQuestion();
   }
 }
@@ -109,7 +96,6 @@ function startQuiz() {
   } else if (displayedIntro) {
     hideIntro();
     toggleButtons();
-
     questionNumber = 0; // Reset current question index
     score = 0;
   }
