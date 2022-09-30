@@ -30,19 +30,22 @@
       </div>
     </div>
     <div class="wrapper">
-      <div class="container">
-        <p class="question" id="question">Quiz</p>
+      <div class="test-container">
+        <div class="dynamic-sidebyside">
+          <p class="question" id="question">Quiz</p>
+          <img src="image.png" id="questionImage" class="question-image" />
+        </div>
         <div class="px-4 text-center" id="intro">
           <img
-            class="d-block mx-auto mb-4"
+            class="d-block mx-auto mb-5"
             src="organised.jpg"
-            alt=""
+            alt="organised desk"
             width="300"
             height="165"
           />
-          <h1 class="display-6 fw-bold">How organised are you?</h1>
-          <div class="col-lg-10 mx-auto">
-            <p class="lead">
+          <h1 class="display-10 fw-bold">How organised are you?</h1>
+          <div class="col-lg mx-auto">
+            <p class="intro">
               You will be asked 10 questions, at the end of the test you will be
               given a result which corresponds to the answers you have entered
               throughout the quiz. Best of luck!
@@ -50,11 +53,11 @@
           </div>
         </div>
         <p class="result" id="result"></p>
-        <div class="row">
+        <div class="sidebyside">
           <button class="answer" id="answer1" onclick="userChose(1)">1</button>
           <button class="answer" id="answer2" onclick="userChose(2)">2</button>
         </div>
-        <div class="row">
+        <div class="sidebyside">
           <button class="answer" id="answer3" onclick="userChose(3)">3</button>
           <button class="answer" id="answer4" onclick="userChose(4)">4</button>
         </div>
